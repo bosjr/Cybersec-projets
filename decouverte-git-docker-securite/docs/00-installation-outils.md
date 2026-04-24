@@ -64,6 +64,9 @@ Télécharger :
 Aller sur le site officiel :
 
 - Windows / Mac : [https://www.docker.com/get-started](https://www.docker.com/get-started)
+- Windows / Mac : [02-TP2-docker-desktop-window.md](02-TP2-docker-desktop-windows.md)
+
+
 - Linux : utiliser le gestionnaire de paquets (exemple Ubuntu) :
 
 ```bash
@@ -73,7 +76,6 @@ sudo apt install docker.io
 
 ## 🔧 Installer Docker
 
-* Windows / Mac : suivre l’assistant d’installation
 * Linux : vérifier l’installation :
 
 ```bash
@@ -130,3 +132,4 @@ sudo systemctl start docker
 ## ➡️ Prochaine étape
 
 Cloner un projet avec git ou  GitHub Desktop
+

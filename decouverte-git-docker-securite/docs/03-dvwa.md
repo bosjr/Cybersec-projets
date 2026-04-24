@@ -12,12 +12,17 @@ Vous allez :
 - comprendre le principe
 
 ---
+docker run -d -p 8080:80 --name dvwa vulnerables/web-dvwa
+
+En premier tester : docker scout quickview vulnerables/web-dvwa
 
 ## ⚙️ 1. Accéder à DVWA
 
 Dans votre navigateur :
 
 [http://localhost:8080](http://localhost:8080)
+
+create database
 
 ---
 

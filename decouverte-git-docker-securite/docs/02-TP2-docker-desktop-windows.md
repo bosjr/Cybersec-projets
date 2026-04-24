@@ -6,24 +6,28 @@ Installer **Docker Desktop sur Windows 11**, activer **WSL2**, puis déployer un
 
 ---
 
-# 1. Pré-requis
+## 1. Pré-requis
 
 * Windows 11 64 bits
 * Droits administrateur
 * Virtualisation activée (BIOS)
 * Connexion Internet
+* WSL2
 
 ---
 
-# 2. Activation WSL2 (obligatoire pour Docker Desktop)
+## 2. Activation WSL2 (obligatoire pour Docker Desktop)
 
 ## Étape 1 — Activer WSL via interface Windows
 
 1. Ouvrir :
 
-   ```
+   ```text
+
    Panneau de configuration → Programmes → Activer ou désactiver des fonctionnalités Windows
+
    ```
+
 2. Cocher :
 
    * ✔ Windows Subsystem for Linux
@@ -42,6 +46,8 @@ Après redémarrage :
 
 ```powershell
 wsl --install
+ou wsl --update
+wsl --status
 ```
 
 3. Redémarrer si demandé
@@ -58,20 +64,20 @@ wsl --install
 
 ---
 
-# 3. Installation Docker Desktop (GUI)
+## 3. Installation Docker Desktop (GUI)
 
 ## Étape 1 — Téléchargement
 
 * Aller sur :
   [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 
-* Télécharger **Docker Desktop for Windows**
+* Télécharger **Docker Desktop for Windows AMD64**
 
 ---
 
 ## Étape 2 — Installation
 
-1. Lancer l’installeur
+1. Lancer l’installeur "Docker Desktop Installer.exe" en tant qu'administrateur
 2. Cocher :
 
    * ✔ Use WSL2 instead of Hyper-V (si proposé)
@@ -88,6 +94,9 @@ Ouvrir Docker Desktop :
 
   * 🟢 Engine running
   * 🟢 WSL integration enabled
+
+
+  enable terminal
 
 ---
 
@@ -106,14 +115,14 @@ Ouvrir Docker Desktop :
 
 Dans Docker Desktop :
 
-## Onglet Settings → Resources
+## Settings → Resources
 
 * RAM : 4 Go minimum recommandé
 * CPU : 2 cœurs minimum
 
-## Onglet WSL Integration
+## WSL Integration
 
-* Activer Ubuntu (ou distro installée)
+* Activer Ubuntu (ou distro installée) dans Settings Resources
 
 ---
 
@@ -124,25 +133,21 @@ Dans Docker Desktop :
 1. Aller dans **Docker Desktop**
 2. Onglet **Images**
 3. Cliquer **Search**
-4. Rechercher :
+4. Rechercher : dvwa 
+5. Cliquer sur **Pull**
+6. Attendre téléchargement
+7. Cliquer sur l’image téléchargée
+8. Cliquer **Run**
 
-   ```
-   vulnerables/web-dvwa
+Ouvrir terminal dans GitHub Desktop
+
+   ```bash
+   docker run -d -p 8080:80 vulnerables/web-dvwa
+   docker ps
+
    ```
 
 ---
-
-## Étape 2 — Télécharger (Pull)
-
-* Cliquer sur **Pull**
-* Attendre téléchargement
-
----
-
-## Étape 3 — Lancer DVWA
-
-1. Cliquer sur l’image téléchargée
-2. Cliquer **Run**
 
 ## Paramètres à configurer :
 
@@ -169,7 +174,7 @@ Identifiants :
 
 ---
 
-# 6. Vérification fonctionnement
+## 6. Vérification fonctionnement
 
 Dans Docker Desktop :
 
@@ -179,7 +184,7 @@ Dans Docker Desktop :
 
 ---
 
-# 7. Erreurs courantes DVWA
+## 7. Erreurs courantes DVWA
 
 | Problème               | Cause              | Solution                          |
 | ---------------------- | ------------------ | --------------------------------- |
@@ -190,7 +195,7 @@ Dans Docker Desktop :
 
 ---
 
-# 8. Nettoyage (important en TP)
+## 8. Nettoyage (important en TP)
 
 Dans Docker Desktop :
 
@@ -200,7 +205,7 @@ Dans Docker Desktop :
 
 ---
 
-# 9. Synthèse pédagogique
+## 9. Synthèse pédagogique
 
 * WSL2 = moteur Linux intégré Windows
 * Docker Desktop = interface + moteur conteneur
@@ -209,7 +214,7 @@ Dans Docker Desktop :
 
 ---
 
-# 10. Résultat attendu
+## 10. Résultat attendu
 
 À la fin du TP :
 
@@ -217,9 +222,10 @@ Dans Docker Desktop :
 * WSL2 actif
 * DVWA accessible sur :
 
-  ```
+  ```text
   http://localhost:8080
   ```
+
 * Étudiants capables de :
 
   * lancer un conteneur
@@ -228,3 +234,66 @@ Dans Docker Desktop :
 
 ---
 
+## INFO : Sur un PC Windows 11 classique, il faut presque toujours choisir :
+
+## **AMD64 (x86_64)**
+
+Même si le processeur est un **Intel** ou un **AMD**, Docker Desktop utilise l’architecture **AMD64** (appelée aussi x64 ou x86_64).
+
+---
+
+## Quand choisir ARM ?
+
+Seulement si le poste est un appareil :
+
+* Windows on ARM
+* Microsoft Surface avec processeur ARM
+* Snapdragon
+* certains appareils très récents type Copilot+ PC
+
+Dans ce cas :
+
+## **ARM64**
+
+---
+
+## Résumé simple
+
+| Type de processeur       | Version Docker |
+| ------------------------ | -------------- |
+| Intel Core i5 / i7 / i9  | AMD64          |
+| AMD Ryzen                | AMD64          |
+| Snapdragon / Surface ARM | ARM64          |
+
+---
+
+## Exemple
+
+### PC portable classique Lenovo / HP / Dell
+
+→ **AMD64**
+
+### Surface Pro X
+
+→ **ARM64**
+
+---
+
+## Vérifier sous Windows
+
+### Paramètres
+
+*Paramètres → Système → Informations système
+
+Regarder :
+
+### Type du système
+
+* “processeur x64” → AMD64
+* “processeur ARM64” → ARM64
+
+---
+
+Donc en général :
+
+## télécharger Docker Desktop → version AMD64
