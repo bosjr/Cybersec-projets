@@ -13,7 +13,9 @@ Environnement prêt
 
 ---
 
-## 🧰 1. Installer GitHub Desktop
+## 🧰 1. Installer GitHub Desktop ou Git puis GitHub Desktop
+
+[Suivre tutoriel Git+ GitHub Desktop](./00-installation-git-githubdesktop.md)
 
 Télécharger et installer :
 

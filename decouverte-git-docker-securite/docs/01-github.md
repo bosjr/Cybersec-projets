@@ -139,7 +139,7 @@ git push
 
 ---
 
-# Prise en main de GitHub Desktop
+## Prise en main de GitHub Desktop
 
 ## 🎯 Objectif
 
