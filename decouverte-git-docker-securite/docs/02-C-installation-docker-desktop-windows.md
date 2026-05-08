@@ -50,7 +50,7 @@ ou wsl --update
 wsl --status
 ```
 
-3. Redémarrer si demandé
+* Redémarrer si demandé
 
 ---
 
@@ -95,7 +95,6 @@ Ouvrir Docker Desktop :
   * 🟢 Engine running
   * 🟢 WSL integration enabled
 
-
   enable terminal
 
 ---
@@ -111,7 +110,7 @@ Ouvrir Docker Desktop :
 
 ---
 
-# 4. Vérification via interface Docker Desktop
+## 4. Vérification via interface Docker Desktop
 
 Dans Docker Desktop :
 
@@ -126,7 +125,7 @@ Dans Docker Desktop :
 
 ---
 
-# 5. Installation DVWA (via GUI uniquement)
+## 5. Installation DVWA (via GUI uniquement)
 
 ## Étape 1 — Recherche image
 
@@ -149,11 +148,11 @@ Ouvrir terminal dans GitHub Desktop
 
 ---
 
-## Paramètres à configurer :
+## Paramètres à configurer
 
 * Port mapping :
 
-  ```
+  ```text
   8080 → 80
   ```
 
@@ -163,7 +162,7 @@ Ouvrir terminal dans GitHub Desktop
 
 Dans navigateur Windows :
 
-```
+```text
 http://localhost:8080
 ```
 
@@ -234,7 +233,7 @@ Dans Docker Desktop :
 
 ---
 
-## INFO : Sur un PC Windows 11 classique, il faut presque toujours choisir :
+## INFO : Sur un PC Windows 11 classique, il faut presque toujours choisir
 
 ## **AMD64 (x86_64)**
 

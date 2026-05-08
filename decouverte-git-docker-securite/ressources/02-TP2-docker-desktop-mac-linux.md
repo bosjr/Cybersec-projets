@@ -6,7 +6,7 @@ Installer Docker, vérifier WSL/équivalent Linux runtime, puis déployer **DVWA
 
 ---
 
-# 1. Pré-requis communs
+## 1. Pré-requis communs
 
 * macOS 11+ ou Linux (Ubuntu recommandé)
 * Droits administrateur
@@ -15,7 +15,7 @@ Installer Docker, vérifier WSL/équivalent Linux runtime, puis déployer **DVWA
 
 ---
 
-# 2. Installation Docker Desktop
+## 2. Installation Docker Desktop
 
 ## A. macOS
 
@@ -99,7 +99,7 @@ Si Docker Desktop non utilisé :
 
 ---
 
-# 3. Configuration Docker Desktop (macOS + Linux)
+## 3. Configuration Docker Desktop (macOS + Linux)
 
 Dans **Settings / Preferences (GUI)** :
 
@@ -118,7 +118,7 @@ Dans **Settings / Preferences (GUI)** :
 
 ---
 
-# 4. Installation DVWA (GUI uniquement)
+## 4. Installation DVWA (GUI uniquement)
 
 ## Étape 1 — Recherche image
 
@@ -128,7 +128,7 @@ Dans Docker Desktop :
 * cliquer **Search**
 * rechercher :
 
-```
+```text
 vulnerables/web-dvwa
 ```
 
@@ -150,7 +150,7 @@ Configurer :
 
 * Port mapping :
 
-```
+```text
 8080 → 80
 ```
 
@@ -171,7 +171,7 @@ Identifiants :
 
 ---
 
-# 5. Vérification via GUI
+## 5. Vérification via GUI
 
 Dans Docker Desktop :
 
@@ -188,7 +188,7 @@ Actions disponibles :
 
 ---
 
-# 6. Erreurs courantes DVWA (tous OS)
+## 6. Erreurs courantes DVWA (tous OS)
 
 | Problème          | Cause                | Solution                         |
 | ----------------- | -------------------- | -------------------------------- |
@@ -199,7 +199,7 @@ Actions disponibles :
 
 ---
 
-# 7. Nettoyage TP
+## 7. Nettoyage TP
 
 Dans Docker Desktop :
 
@@ -209,7 +209,7 @@ Dans Docker Desktop :
 
 ---
 
-# 8. Synthèse pédagogique
+## 8. Synthèse
 
 ### Docker Desktop sur macOS / Linux
 
@@ -227,7 +227,7 @@ Dans Docker Desktop :
 
 ---
 
-# 9. Résultat attendu
+## 9. Résultat attendu
 
 À la fin du TP :
 
@@ -235,9 +235,8 @@ Dans Docker Desktop :
 * DVWA fonctionnel
 * Accès via navigateur :
 
-```
+```text
 http://localhost:8080
 ```
 
 ---
-
