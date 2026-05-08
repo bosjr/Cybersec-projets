@@ -175,16 +175,29 @@ File → Options → Accounts
 
 ---
 
-## Méthode alternative (création directe)
+## Lorsque le dépôt GitHub est mis à jour
 
-Dans GitHub Desktop :
+Exemple :
+
+ajout d’un TP
+correction d’un README
+nouveaux fichiers.
+
+### récupérer les modifications.
+
+Avec GitHub Desktop
+Méthode simple
+
+Dans le dépôt ouvert :
 
 ```text
-File → New Repository
+Fetch origin
 ```
 
 Puis :
 
-* choisir le dossier
-* créer le dépôt
-* publier directement sur GitHub.
+```text
+Pull origin
+```
+
+Les nouveaux fichiers apparaissent automatiquement localement
