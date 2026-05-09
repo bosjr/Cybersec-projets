@@ -73,6 +73,70 @@ wsl --status
 
 * Télécharger **Docker Desktop for Windows AMD64**
 
+## INFO : Sur un PC Windows 11 classique, il faut presque toujours choisir
+
+## **AMD64 (x86_64)**
+
+Même si le processeur est un **Intel** ou un **AMD**, Docker Desktop utilise l’architecture **AMD64** (appelée aussi x64 ou x86_64).
+
+---
+
+## Quand choisir ARM ?
+
+Seulement si le poste est un appareil :
+
+* Windows on ARM
+* Microsoft Surface avec processeur ARM
+* Snapdragon
+* certains appareils très récents type Copilot+ PC
+
+Dans ce cas :
+
+## **ARM64**
+
+---
+
+## Résumé simple
+
+| Type de processeur       | Version Docker |
+| ------------------------ | -------------- |
+| Intel Core i5 / i7 / i9  | AMD64          |
+| AMD Ryzen                | AMD64          |
+| Snapdragon / Surface ARM | ARM64          |
+
+---
+
+## Exemple
+
+### PC portable classique Lenovo / HP / Dell
+
+→ **AMD64**
+
+### Surface Pro X
+
+→ **ARM64**
+
+---
+
+## Vérifier sous Windows
+
+### Paramètres
+
+*Paramètres → Système → Informations système
+
+Regarder :
+
+### Type du système
+
+* “processeur x64” → AMD64
+* “processeur ARM64” → ARM64
+
+---
+
+Donc en général :
+
+## télécharger Docker Desktop → version AMD64
+
 ---
 
 ## Étape 2 — Installation
@@ -146,14 +210,10 @@ Ouvrir terminal dans GitHub Desktop
 
    ```
 
----
-
-## Paramètres à configurer
-
 * Port mapping :
 
   ```text
-  8080 → 80
+  8080 (machine hote) → 80 (image docker dvwa)
   ```
 
 ---
@@ -194,7 +254,7 @@ Dans Docker Desktop :
 
 ---
 
-## 8. Nettoyage (important en TP)
+## 8. Nettoyage (important en fin de TP)
 
 Dans Docker Desktop :
 
@@ -232,67 +292,3 @@ Dans Docker Desktop :
   * supprimer / redémarrer un service
 
 ---
-
-## INFO : Sur un PC Windows 11 classique, il faut presque toujours choisir
-
-## **AMD64 (x86_64)**
-
-Même si le processeur est un **Intel** ou un **AMD**, Docker Desktop utilise l’architecture **AMD64** (appelée aussi x64 ou x86_64).
-
----
-
-## Quand choisir ARM ?
-
-Seulement si le poste est un appareil :
-
-* Windows on ARM
-* Microsoft Surface avec processeur ARM
-* Snapdragon
-* certains appareils très récents type Copilot+ PC
-
-Dans ce cas :
-
-## **ARM64**
-
----
-
-## Résumé simple
-
-| Type de processeur       | Version Docker |
-| ------------------------ | -------------- |
-| Intel Core i5 / i7 / i9  | AMD64          |
-| AMD Ryzen                | AMD64          |
-| Snapdragon / Surface ARM | ARM64          |
-
----
-
-## Exemple
-
-### PC portable classique Lenovo / HP / Dell
-
-→ **AMD64**
-
-### Surface Pro X
-
-→ **ARM64**
-
----
-
-## Vérifier sous Windows
-
-### Paramètres
-
-*Paramètres → Système → Informations système
-
-Regarder :
-
-### Type du système
-
-* “processeur x64” → AMD64
-* “processeur ARM64” → ARM64
-
----
-
-Donc en général :
-
-## télécharger Docker Desktop → version AMD64

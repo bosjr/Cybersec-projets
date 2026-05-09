@@ -33,6 +33,7 @@ Voici les commandes les plus utiles pour débuter :
 - `docker ps -a` : lister tous les conteneurs.
 - `docker logs` : consulter les journaux.
 - `docker exec -it` : entrer dans un conteneur.
+- `docker inspect` : tester conteneur
 - `docker stop` et `docker rm` : arrêter et supprimer un conteneur.
 
 Exemple :
@@ -52,7 +53,24 @@ Exemple :
 
 ```bash
 docker volume create mon_volume
+docker volume create dvwa-data
+docker volume ls
+docker run -d \
+  --name dvwa \
+  -p 8080:80 \
+  -v dvwa-data:/var/lib/mysql \
+  vulnerables/web-dvwa
 ```
+
+## Explications des options
+
+| Option                          | Rôle                                   |
+| ------------------------------- | -------------------------------------- |
+| `-d`                            | Lance le conteneur en arrière-plan     |
+| `--name dvwa`                   | Nom du conteneur                       |
+| `-p 8080:80`                    | Port local 4280 → port 80 du conteneur |
+| `-v dvwa-data:/var/lib/mysql`   | Monte le volume Docker                 |
+| `vulnerables/web-dvwa`          | Image DVWA                             |
 
 ## Docker Compose
 
