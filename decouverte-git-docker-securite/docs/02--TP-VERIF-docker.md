@@ -6,15 +6,21 @@ Valider que Docker Desktop est correctement installé et fonctionnel (WSL2 + mot
 
 ---
 
+## Vérification WSL2 (important sur Windows)
+
+```powershell
+wsl -l -v
+```
+
 ## 1. Vérification du moteur Docker
 
 ### Commande
 
-```bash id="t1"
+```bash
 docker version
 ```
 
-### Attendu t1
+### Attendu
 
 * Client Docker présent
 * Server (Engine) accessible
@@ -24,11 +30,11 @@ docker version
 
 ## 2. Vérification du service Docker
 
-```bash id="t2"
+```bash
 docker info
 ```
 
-### Attendu t2
+### Attendu 2
 
 * WSL2 backend indiqué
 * “Containers: running” ou informations système affichées
@@ -38,11 +44,11 @@ docker info
 
 ## 3. Test d’exécution d’un conteneur simple
 
-```bash id="t3"
+```bash
 docker run hello-world
 ```
 
-### Attendu t3
+### Attendu 3
 
 * Téléchargement de l’image
 * Message :
@@ -56,11 +62,15 @@ This message shows that your installation appears to be working correctly.
 
 ## 4. Vérification des conteneurs actifs
 
-```bash id="t4"
+```bash
 docker ps
 ```
 
-### Attendu t4
+### Attendu 4
+
+docker ps
+
+Affiche uniquement les conteneurs en cours d’exécution.
 
 * Liste vide ou conteneurs actifs
 * Pas d’erreur
@@ -69,37 +79,40 @@ docker ps
 
 ## 5. Vérification des conteneurs arrêtés
 
-```bash id="t5"
+```bash
 docker ps -a
 ```
 
-### Attendu t5
+### Attendu 5
 
-* présence possible de `hello-world` (Exited)
+* présence possible de `hello-world`
 
----
+docker ps -a
 
-## 6. Vérification WSL2 (important sur Windows)
+Affiche tous les conteneurs :
 
-```powershell id="t6"
-wsl -l -v
-```
-
-### Attendu t6
-
-* `docker-desktop`
-* `docker-desktop-data`
-* Version 2
+en cours d’exécution,
+arrêtés,
+terminés,
+en erreur.
 
 ---
 
-## 7. Test réseau Docker
+## 6. Test réseau Docker
 
-```bash id="t7"
+```bash
 docker run --rm alpine ping -c 3 google.com
 ```
 
-### Attendu t7
+Alpine Linux est une distribution Linux très légère souvent utilisée pour :
+
+les tests,
+les conteneurs minimalistes,
+les environnements Docker rapides.
+
+Si l’image n’existe pas localement, Docker la télécharge automatiquement depuis Docker Hub
+
+### Attendu 6
 
 * résolution DNS OK
 * ping réussi
@@ -108,9 +121,9 @@ docker run --rm alpine ping -c 3 google.com
 
 ## Critères de validation
 
+✔ WSL2 actif
 ✔ Docker Engine répond
 ✔ `hello-world` fonctionne
-✔ WSL2 actif
 ✔ Pas d’erreur de daemon
 ✔ Réseau conteneur OK
 
