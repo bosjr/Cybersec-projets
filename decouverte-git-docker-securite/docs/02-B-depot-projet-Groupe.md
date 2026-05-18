@@ -233,10 +233,20 @@ Documents\GitHub\
 
 * crée le dépôt
 * fait le premier push.
+* inviter les collaborateurs (Settings, colaborateurs)
 
-## Les autres
+## Les autres membres
 
-* sont collaborateurs
-* clonent ensuite le dépôt.
+* chacun vérifie et valide l'invitation du responsable du projet
+
+Workflow :
+
+* Ouvrir GitHub web
+* Accepter l’invitation notifiée
+* Ouvrir GitHub Desktop
+* Clone Repository
+* Sélectionner le dépôt ou avec l'adresse https du git Groupe
+
+Ensuite faire des ajouts ou modifs via visual studio en ouvrant le bon dossier et maj le remote via github desktop.
 
 C’est le workflow GitHub collaboratif le plus simple.
